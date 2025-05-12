@@ -16,8 +16,8 @@ import org.springframework.context.annotation.Import;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.support.TransactionTemplate;
 
-import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -187,7 +187,7 @@ class NPlus1DetectionTest2 {
             System.out.println("--------------------------------------------------------------------------------------");
             System.out.println("--------------------------------------------------------------------------------------");
             TypedQuery<Doctor> query = entityManager.createQuery("select distinct d from Doctor d left join fetch d.appointments left join fetch d.patients", Doctor.class);
-            query.setHint(QueryHints.PASS_DISTINCT_THROUGH, false);
+//            query.setHint(QueryHints.PASS_DISTINCT_THROUGH, false);
             List<Doctor> doctors = query.getResultList();
             for (Doctor doctor : doctors) {
                 assertThat(doctor.getAppointments()).hasSizeGreaterThan(0);

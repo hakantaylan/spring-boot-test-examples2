@@ -1,14 +1,12 @@
 package com.examples.junit5testorder.user;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "MY_USER")
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
